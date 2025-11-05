@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProductGrid from "./components/ProductGrid";
 import AppointmentForm from "./components/AppointmentForm";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -15,15 +16,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div className="min-h-screen bg-white text-neutral-900 flex flex-col">
       <Header cartCount={cartCount} onBookClick={handleBookClick} />
-      <main>
+      <main className="flex-1">
         <Hero onBookClick={handleBookClick} />
         <ProductGrid onAddToCart={handleAddToCart} />
         <div ref={appointmentRef}>
           <AppointmentForm />
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,14 +1,7 @@
-import Spline from "@splinetool/react-spline";
-
 export default function Hero({ onBookClick }) {
   return (
     <section id="home" className="relative overflow-hidden">
-      {/* 3D background scene */}
-      <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/6W9v0eQb7dQq0yVh/scene.splinecode" style={{ width: "100%", height: "100%" }} />
-      </div>
-
-      {/* Soft gradient overlay that does not block pointer events */}
+      {/* Background gradient (non-blocking) */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_500px_at_10%_-10%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(59,130,246,0.14),transparent_50%)]" />
 
       {/* Foreground content */}
