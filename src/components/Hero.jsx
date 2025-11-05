@@ -1,13 +1,20 @@
+import Spline from "@splinetool/react-spline";
+
 export default function Hero({ onBookClick }) {
   return (
     <section id="home" className="relative overflow-hidden">
-      {/* Background gradient (non-blocking) */}
+      {/* 3D background */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/ae0b7kB3s-heroBg/scene.splinecode" style={{ width: "100%", height: "100%" }} />
+      </div>
+
+      {/* Non-blocking gradient overlay */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_500px_at_10%_-10%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(59,130,246,0.14),transparent_50%)]" />
 
       {/* Foreground content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div className="backdrop-blur-[2px] bg-white/30 rounded-2xl p-6 md:p-8 border border-white/40">
+          <div className="backdrop-blur-[2px] bg-white/50 rounded-2xl p-6 md:p-8 border border-white/60">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-emerald-700 text-xs font-medium">
               Clinically guided access
             </span>
