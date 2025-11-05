@@ -1,17 +1,27 @@
+import Spline from "@splinetool/react-spline";
+
 export default function Hero({ onBookClick }) {
   return (
     <section id="home" className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(1000px_500px_at_10%_-10%,rgba(16,185,129,0.15),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(59,130,246,0.12),transparent_50%)]" />
+      {/* 3D background scene */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/6W9v0eQb7dQq0yVh/scene.splinecode" style={{ width: "100%", height: "100%" }} />
+      </div>
+
+      {/* Soft gradient overlay that does not block pointer events */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1000px_500px_at_10%_-10%,rgba(16,185,129,0.18),transparent_60%),radial-gradient(800px_400px_at_90%_10%,rgba(59,130,246,0.14),transparent_50%)]" />
+
+      {/* Foreground content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
+          <div className="backdrop-blur-[2px] bg-white/30 rounded-2xl p-6 md:p-8 border border-white/40">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-emerald-700 text-xs font-medium">
               Clinically guided access
             </span>
             <h1 className="mt-4 text-4xl sm:text-5xl font-extrabold tracking-tight text-neutral-900">
               Modern medical cannabis, delivered with care
             </h1>
-            <p className="mt-4 text-neutral-600 text-lg leading-relaxed">
+            <p className="mt-4 text-neutral-700 text-lg leading-relaxed">
               Explore pharmacist-approved products and book a secure online consultation to get your prescription quickly and safely.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -23,12 +33,12 @@ export default function Hero({ onBookClick }) {
               </a>
               <button
                 onClick={onBookClick}
-                className="inline-flex h-11 items-center justify-center rounded-md border border-neutral-300 px-5 text-neutral-800 hover:bg-neutral-50"
+                className="inline-flex h-11 items-center justify-center rounded-md border border-neutral-300 bg-white/70 backdrop-blur px-5 text-neutral-800 hover:bg-white"
               >
                 Book consultation
               </button>
             </div>
-            <div className="mt-8 flex items-center gap-6 text-sm text-neutral-600">
+            <div className="mt-8 flex items-center gap-6 text-sm text-neutral-700">
               <div>
                 <span className="font-semibold text-neutral-900">Licensed doctors</span>
                 <span className="mx-2">•</span>
@@ -41,6 +51,7 @@ export default function Hero({ onBookClick }) {
               </div>
             </div>
           </div>
+
           <div className="relative">
             <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-emerald-100 via-white to-sky-100 border border-neutral-200 p-1">
               <div className="h-full w-full rounded-xl bg-white/70 backdrop-blur flex items-center justify-center">

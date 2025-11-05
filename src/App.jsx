@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProductGrid from "./components/ProductGrid";
 import AppointmentForm from "./components/AppointmentForm";
-import Footer from "./components/Footer";
 
 export default function App() {
   const [cartCount, setCartCount] = useState(0);
@@ -25,7 +24,6 @@ export default function App() {
           <AppointmentForm />
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
